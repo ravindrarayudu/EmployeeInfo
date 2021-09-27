@@ -1,0 +1,30 @@
+﻿@model EmployeeInfo.Contracts.Models.Address
+<h3>Address Information</h3>
+<div class="form-group row row-cols-2">
+    <div class="col form-actions no-color">
+        <p class="quotepara">
+            <label for="AddressDescription">Address Description</label>
+            <input asp-for="@(Model.AddressDescription)" id="addressdescription" type="text" class="form-control" placeholder="Address Description">
+        </p>
+    </div>
+    <div class="col form-actions no-color">
+        <p class="quotepara">
+            <label for="AddressLineOne">Name</label>
+            <input asp-for="@(Model.AddressLineOne)" id="addresslineone" type="text" class="form-control" placeholder="Address">
+        </p>
+    </div>
+</div>
+<div class="form-group row row-cols-2">
+    <div class="col form-actions no-color">
+        <p class="quotepara">
+            <label for="City">City</label>
+            <select asp-for="@(Model.CityId)" class="form-control" asp-items="@(new SelectList(@ViewBag.City,"CityName","Id"))"></select>
+        </p>
+    </div>
+    <div class="col form-actions no-color">
+        <p class="quotepara">
+            <label for="LandMark">LandMark</label>
+            <input asp-for="@(Model.LandMark)" id="landmark" type="text" class="form-control" placeholder="LandMark">
+        </p>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+﻿@model EmployeeSearchRequest
+@using EmployeeInfo.UI.Controllers;
+@using EmployeeInfo.Contracts.Entities;
+@using EmployeeInfo.Contracts.Entities.Request;
+@using EmployeeInfo.Contracts.Entities.Custom;
+@using Newtonsoft.Json;
+@using System.Linq;
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+<div class="container">
+    <h2>Search Employers</h2>
+    <script src="~/js/employeesearch.js"></script>
+    <form method="get" asp-controller="Home" asp-action="Index">
+        <div id="accordion">
+            <h3>Search Criteria</h3>
+            <div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.EmployeeName, new { id = "employeename", placeholder = "Employee Name #", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.Aadhar, new { id = "aadhar", placeholder = "Aadhar Card Number #", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.Uan, new { id = "uan", placeholder = "UAN Number #", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.DateFrom, new { id = "datefrom", placeholder = "Date From", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.DateTo, new { id = "dateto", placeholder = "Date To", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-actions no-color" style="text-align:center">
+                        <input type="submit" value="Search" class="btn btn-primary" /> |
+                        <a asp-controller="Home" asp-action="Index">Back to full List</a>
+                    </div>
+                </div>
+
+            </div>
+            <h3>Search Results</h3>
+            <div>
+
+                @{
+                    var employeesearchresult = (EmployeeSearchResult)ViewData["EmployeeSearchResult"];
+
+                    var searchparams = new Dictionary<string, string>
+                                                                        {
+                                                                            { "EmployeeName", Model.EmployeeName },
+                                                                            { "Aadhar", Model.Aadhar.ToString() },
+                                                                            { "UAN", Model.Uan.ToString() },
+                                                                            { "DateFrom", Model.DateFrom.ToString() },
+                                                                            { "DateTo", Model.DateTo.ToString() }
+                                                                        };
+                }
+
+                @if (employeesearchresult != null && employeesearchresult.EmployeeSearchList != null && employeesearchresult.EmployeeSearchList.Count() > 0)
+                {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <a asp-controller="Home" asp-action="Index" asp-all-route-data="searchparams" asp-route-sortOrder="@Model.PaginationRequest.Sort.SortDirection"
+                                       asp-route-currentFilter="EmployeeName">
+                                        Employee Name
+                                    </a>
+                                </th>
+                                <th>
+                                    <a asp-controller="Home" asp-action="Index" asp-all-route-data="searchparams" asp-route-sortOrder="@Model.PaginationRequest.Sort.SortDirection"
+                                       asp-route-currentFilter="Mobile">
+                                        Mobile Number
+                                    </a>
+                                </th>
+                                <th>
+                                    <a asp-controller="Home" asp-action="Index" asp-all-route-data="searchparams" asp-route-sortOrder="@Model.PaginationRequest.Sort.SortDirection"
+                                       asp-route-currentFilter="Aadhar">
+                                        Aadhar Card Number
+                                    </a>
+                                </th>
+                                <th>
+                                    <a asp-controller="Home" asp-action="Index" asp-all-route-data="searchparams" asp-route-sortOrder="@Model.PaginationRequest.Sort.SortDirection"
+                                       asp-route-currentFilter="Uan">
+                                        UAN Number
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <partial name="EmployeeResult" model="employeesearchresult" />
+                        </tbody>
+                    </table>
+                    <a asp-controller="Home" asp-action="Index" asp-all-route-data="searchparams" asp-route-sortOrder="@Model.PaginationRequest.Sort.SortDirection"
+                       asp-route-pageIndex="@(Model.PaginationRequest.PageIndex - 1)"
+                       asp-route-currentFilter="@Model.PaginationRequest.Sort.SortBy" class="btn btn-primary">
+                        Previous
+                    </a>
+                    <a asp-controller="Home" asp-action="Index" asp-all-route-data="searchparams" asp-route-sortOrder="@Model.PaginationRequest.Sort.SortDirection"
+                       asp-route-pageIndex="@(Model.PaginationRequest.PageIndex + 1)"
+                       asp-route-currentFilter="@Model.PaginationRequest.Sort.SortBy" class="btn btn-primary ">
+                        Next
+                    </a>
+                }
+                else
+                {
+                    <p> No Results to Show </p>
+                }
+
+            </div>
+        </div>
+
+    </form>
+</div>

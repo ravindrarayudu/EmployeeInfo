@@ -1,0 +1,26 @@
+﻿@model EmployeeInfo.Contracts.Entities.Customer
+@using EmployeeInfo.Contracts.Entities;
+<div>
+    <div class="row row-cols-2">
+        <div class="col form-actions no-color">
+            <p>
+                <label>Customer Id :</label>
+                @Html.DisplayFor(model => model.Id)
+            </p>
+        </div>
+        <div class="col form-actions no-color">
+            <p>
+                <label>Customer Name :</label>
+                @Html.DisplayFor(model => model.CustomerName)
+            </p>
+        </div>
+    </div>
+    <div class="row row-cols-2">
+        <div class="col form-actions no-color">
+            <p>
+                <label>User Id :</label>
+                @Html.DisplayFor(model => model.ModifiedBy)
+            </p>
+        </div>
+    </div>
+</div>

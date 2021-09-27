@@ -1,0 +1,44 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:TextBox runat = "Server" cssClass="input-sm form-control" style="font-family:Arial; height:30px;" />
+<asp:DropDownList runat = "Server" cssClass="form-control" style="font-family:Arial; height:30px;" />
+
+<asp:Label runat = "Server" font-name = "Arial"/>
+
+<%-- anonymous
+
+
+<asp:TextBox runat = "Server" style="background-color:#EDECEC;color: #000000;border: 1px solid #ccc;font-size:10pt;font-family:Verdana;width:98%;vertical-align:top"/>
+
+<asp:Label runat = "Server" font-bold = "true" font-name = "Arial"/>
+<asp:DropDownList runat = "Server" style="background-color:#EDECEC;vertical-align:middle;border: solid 1px #888888;font-size:10pt; width:100%"/>
+ --%>
+<asp:GridView runat="server" ForeColor="Black" HeaderStyle-BackColor="#898989" EditRowStyle-BackColor="#D8D8D8" 
+    RowStyle-BackColor="#D8D8D8" HeaderStyle-ForeColor="White"  EditRowStyle-HorizontalAlign="Center" RowStyle-HorizontalAlign="Center" CellPadding="3" CellSpacing="1" GridLines="Both"/>
+
+<%-- named --%>
+
+<asp:TextBox SkinID="TextBoxCentered" runat = "Server" style="background-color:#EDECEC;color: #000000;border: 1px solid #ccc;font-family:Arial, ;width:98%;vertical-align:top;text-align:center"/>
+<asp:TextBox SkinID="TextBoxRight" runat = "Server" style="background-color:#EDECEC;color: #000000;border: 1px solid #ccc;font-family:Arial;width:98%;vertical-align:top;text-align:right"/>
+<asp:TextBox SkinID="Status" runat = "Server" style="background-color:#EDECEC;color: #000000;border: 1px solid #ccc;font-family:Arial;width:99%;vertical-align:top;text-align:left"/>
+<asp:TextBox SkinID="TextBoxNoWidth" runat = "Server" style="background-color:#EDECEC;color: #000000;border: 1px solid #ccc;font-family:Arial;vertical-align:top;text-align:left"/>
+<asp:TextBox SkinID="Contacts" runat = "Server" style="background-color:#D8D8D8;color: #000000;border: 1px solid #D8D8D8;font-family:Arial;width:98%;vertical-align:top"/>
+<asp:GridView SkinID="QuotesTab" runat="server" ForeColor="Black" Width="100%" HeaderStyle-BackColor="#898989" EditRowStyle-BackColor="#D8D8D8" 
+    RowStyle-BackColor="#D8D8D8" HeaderStyle-ForeColor="White"  EditRowStyle-HorizontalAlign="Center" RowStyle-HorizontalAlign="Center" CellPadding="3" CellSpacing="1" GridLines="Both"  HeaderStyle-Font-Size="8pt" RowStyle-Font-Size="8pt"/>
+<asp:Label SkinID = "LabelRight" runat = "Server" font-bold = "true" font-name = "Arial" style="text-align:right;color: #000000"/>
+<asp:Label SkinID = "NoBold" runat = "Server" font-bold = "false" font-name = "Arial"/>
+<asp:Label SkinID = "th" runat = "Server" font-bold = "true" font-name = "Arial"/>
+<asp:DropDownList SkinID="Search" runat = "Server" style="background-color:#EDECEC;vertical-align:middle;border: solid 1px #888888;font-size:12px;"/>

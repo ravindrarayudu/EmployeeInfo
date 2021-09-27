@@ -1,0 +1,18 @@
+﻿@model EmployeeInfo.Contracts.Entities.BankDetails
+@using EmployeeInfo.Contracts.Entities;
+<div>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Bank Id</th>
+            <th>Bank Name</th>
+            <th>IFSC Code</th>
+            <th>Branch Name</th>
+        </tr>
+        <tr>
+            <td>@Model.Id </td>
+            <td>@Model.BankName</td>
+            <td>@Model.Ifsccode </td>
+            <td>@Model.BranchName </td>
+        </tr>
+    </table>
+</div>

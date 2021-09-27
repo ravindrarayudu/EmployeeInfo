@@ -1,0 +1,17 @@
+﻿@model IEnumerable<EmployeeInfo.Contracts.Entities.Customer>
+@using EmployeeInfo.Contracts.Entities;
+<div>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+        </tr>
+        @foreach (Customer customer in Model)
+        {
+            <tr>
+                <td>@customer.Id </td>
+                <td>@customer.CustomerName</td>
+            </tr>
+        }
+    </table>
+</div>

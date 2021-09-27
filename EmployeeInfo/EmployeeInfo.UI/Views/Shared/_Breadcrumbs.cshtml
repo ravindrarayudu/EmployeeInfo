@@ -1,0 +1,15 @@
+﻿@using EmployeeInfo.Services
+@inject BreadcrumbService BreadcrumbService
+<p>
+    <a asp-area="" asp-page="/Index">Home Page</a>
+    @foreach (var breadcrumb in BreadcrumbService.GetBreadcrumbs())
+    {
+        @if (breadcrumb.Title != "Home page")
+        {
+
+            <a asp-area="@breadcrumb.Area" asp-page="@breadcrumb.Page">/ @breadcrumb.Title</a>
+
+        }
+    }
+
+</p>

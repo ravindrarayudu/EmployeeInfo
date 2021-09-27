@@ -1,0 +1,554 @@
+﻿
+/*--General ------------------------------*/
+
+body
+{
+    background: White;
+    font-size: 12px;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+
+
+
+/*--Tab Container Control ------------------------------*/
+
+
+
+.MyTab .ajax__tab_header
+{
+    font-family: arial,helvetica,clean,sans-serif;
+    font-size: small; /*border-bottom:solid 5px #2647a0;*/
+}
+.MyTab .ajax__tab_header .ajax__tab_outer
+{
+    width: 200px;
+    height: 30px;
+    background: url(menubg.gif) center top no-repeat;
+    margin: 0px 0.50em 0.50em 0px;
+    padding: 1px 0px 1px 0px;
+    text-align: center;
+}
+.MyTab .ajax__tab_header .ajax__tab_tab
+{
+    color: #fff;
+    padding: 0.1em 0.75em;
+    margin-right: 0.01em;
+}
+.MyTab .ajax__tab_hover .ajax__tab_outer
+{
+    cursor: pointer;
+}
+
+.MyTab .ajax__tab_hover {
+    background-position: inherit !important;
+    
+}
+.MyTab .ajax__tab_active .ajax__tab_tab
+{
+    color: #fff;
+}
+.MyTab .ajax__tab_active .ajax__tab_outer
+{
+    background: url(menubg.gif) center -32px no-repeat;
+}
+.MyTab .ajax__tab_body
+{
+    font-family: Arial, verdana,tahoma,helvetica;
+    font-size: 10pt;
+    margin: 0px 0.50em 0.50em 0px;
+    padding: 1px 0px 1px 0px; /*background-color:#D8D8D8;*/
+    height: 450px;
+}
+.MyTab .ajax__tab_hover 
+{ 
+    cursor:pointer;
+} 
+ 
+.MyLable
+{
+    font-family: Arial, verdana,tahoma,helvetica !important;
+    font-size: 10pt;
+    font-weight:normal !important;
+}
+
+/*--ComboBox Control ------------------------------*/
+
+.CustomComboBoxStyle .ajax__combobox_textboxcontainer input
+{
+    background-color: #D8D8D8;
+    vertical-align: middle;
+    border: solid 1px #888888;
+}
+.CustomComboBoxStyle .ajax__combobox_buttoncontainer button
+{
+    background: url(Arrow-Down.png); /*background-color: #888888;*/
+    vertical-align: middle;
+    border: solid 1px #888888;
+}
+
+table.Contacts
+{
+    background-color: #D8D8D8;
+    width: 100%;
+    margin: 3px;
+}
+
+table.Contacts th
+{
+    background-color: #CDCDCD;
+    padding: 3;
+    border-spacing: 3;
+    vertical-align: bottom;
+    text-align: left;
+}
+
+table.Contacts td
+{
+    padding: 3;
+    border-spacing: 3;
+    vertical-align: bottom;
+}
+
+table.Params
+{
+    background-color: white;
+    width: 100%;
+    padding: 3px;
+}
+
+table.Params th
+{
+    background-color: #CDCDCD;
+    vertical-align: bottom;
+    text-align: left;
+}
+
+table.Params td
+{
+    background-color: #D8D8D8;
+    vertical-align: bottom;
+}
+
+table.Payments
+{
+    background-color: white;
+    width: 100%;
+    padding: 3px;
+    border: 0px;
+}
+
+table.Payments th
+{
+    background-color: #CDCDCD;
+    vertical-align: top;
+    text-align: center;
+}
+
+table.Payments td
+{
+    background-color: #D8D8D8;
+    vertical-align: top;
+}
+
+table.Search
+{
+    background-color: white;
+    padding: 3px;
+    border: 0px;
+}
+
+table.Search th
+{
+    background-color: #CDCDCD;
+    vertical-align: top;
+    text-align: left;
+}
+
+table.Search td
+{
+    background-color: #D8D8D8;
+    vertical-align: top;
+}
+
+.MainPanel
+{
+    background-color: #3a4f63;
+}
+.MainPanel-child
+{
+    background-color: #fff;
+    color: #555;
+}
+input.buttonMenu
+{
+    width: 61px;
+    height: 25px; /*background-color: #465c71;     color: #cfdbe6;     border: solid 1px #4e667d;*/
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #ffffff;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    left: inherit;
+    font-size: 16px;
+    font-weight:bold;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    cursor:pointer;
+}
+input.buttonMenuDisabled
+{
+    color: #dde4ec;
+}
+input.purpleButton
+{
+    background-color: #465c71;
+    border: 1px #4e667d solid;
+    color: #ffffff;
+    padding: 2px 5px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    left: inherit;
+    font-size: 12px;
+    font-weight:bold;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    cursor:pointer;
+}
+input.grayButton
+{
+    background-color: #797979;
+    border: 1px #4e667d solid;
+    color: #ffffff;
+    padding: 2px 5px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    left: inherit;
+    font-size: 12px;
+    font-weight:bold;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    cursor:pointer;
+}
+input.blueButton
+{
+    background-color: #38aaff;
+    border: 1px #4e667d solid;
+    color: #ffffff;
+    padding: 2px 5px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    left: inherit;
+    font-size: 12px;
+    font-weight:bold;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    cursor:pointer;
+}
+a.buttonMenu
+{
+    text-decoration: underline;
+    color: #555 !important;
+    background-color: #fff;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    left: inherit;
+    font-size: .90em;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+}
+a.aspNetDisabled
+{
+    text-decoration: none !important;
+}
+
+a.loginlink {
+    text-decoration: underline !important;
+    /*color: #000 !important;
+    background-color: #fff !important;*/
+    line-height: 1.35em;
+    text-decoration: none;
+    font-size: 0.90em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+}
+.btnMain
+{
+    text-decoration: none;
+    font-size: 0.90em;
+    background-color: Silver;
+    color: #000;
+    border: solid 1px Silver;
+}
+.labelEntry
+{
+    color: #000 !important;
+    line-height: 1.35em;
+    text-decoration: none;
+    font-size: 0.90em;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+}
+input.textEntry
+{
+    width: 100%;
+    border: 1px solid #000;
+}
+
+input.passwordEntry
+{
+    width: 100%;
+    border: 1px solid #000;
+}
+.failureNotification
+{
+    font-size: 11px;
+    font-family: "Arial";
+    color: #fc0606;
+}
+.page
+{
+    width: 100%;
+    background-color: #fff;
+    margin: 0px auto 0px auto;
+    border: 1px solid #496077;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    width: 100%;
+}
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    border-style: none;
+    display: block;
+    float: left;
+    text-align: left;
+    width: 100%;
+    background-color: #fff;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+
+/* separate the list from surrounding elements */
+
+ul
+{
+  margin: 0 0 5 10;
+  padding: 0;
+}
+
+ul li
+{
+  /* Stipulate the height of each item so that 
+  vertical return = items * height */
+
+  line-height: 20px;
+
+  /* Clear the default margins & padding 
+  so we can style the list from scratch */
+
+  margin: 0px;
+  padding: 0px;
+  /*list-style: none;*/
+}
+
+/* If li position is left static, Internet 
+Explorer disables hyperlinks in the list 
+in all but the final column.
+
+This rule will be processed only by 
+Internet Explorer because only IE believes 
+that there’s a level above HTML: */
+
+* html ul li
+{
+	position: relative;
+}
+/* horizontal position of each column */
+
+ul li.column1 { margin-left: 10px; }
+ul li.column2 { margin-left: 130px; }
+ul li.column3 { margin-left: 250px; }
+ul li.column4 { margin-left: 370px; }
+ul li.column5 { margin-left: 490px; }
+
+ul li.ccolumn1 { margin-left: 10px; white-space: nowrap;}
+ul li.ccolumn2 { margin-left: 180px; white-space: nowrap;}
+ul li.ccolumn3 { margin-left: 410px; white-space: nowrap;}
+
+/* Bring the first item of each column 
+back up to the level of item 1.
+Vertical return = items * height.
+Here, 5 items * 1.2em line-height = 6em */
+
+li.reset
+{
+  margin-top: -200px;
+}
+li.creset
+{
+  margin-top: -80px;
+}
+
+/*ul li a
+{
+  display: block;
+  width: 130px;
+  text-decoration: none;
+  font-size:12px;
+  font-family:Arial;
+}
+ul li a:hover
+{
+  color: #FFF; 
+  background-color: #A52A2A;
+}*/
+
+
+/* working example of float left - customer state*/
+
+.twoColumns
+{
+    width: 600px; /*this is the width of your <TR>*/
+}
+.twoColumns li
+{
+    float: left;
+    width: 100px; /*adjust these number so that two images fix into one row */
+    padding-left: 3px; /*adjust this to have a space between two images */
+    margin-bottom: 3px; /*adjst this to have a space in between top and bottom images */
+    display: block;
+    list-style: none;
+    font-family: verdana;
+    font-size: 12px;
+}
+
+.ContextMenuPanel
+{
+    border: 1px solid #868686;
+    z-index: 1000;
+    background:  repeat-y 0 0 #FAFAFA;
+    cursor: default;
+    padding: 1px 1px 0px 1px;
+    font-size: 13px;
+    height: 250px;
+    width: 600px;
+   
+}
+
+.ContextMenuBreak
+{
+    margin: 1px 1px 1px 1px;
+    padding: 0;
+    height: 1px;
+    overflow: hidden;
+    display: block;
+    border-top: 1px solid #C5C5C5;
+}
+
+a.ContextMenuItem
+{
+    margin: 1px 0 1px 0;
+    display: block;
+    color: #003399;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 4px 4px 4px 4px;
+    white-space: nowrap;
+}
+
+a.ContextMenuItem-Selected
+{
+    font-weight: bold;
+}
+
+a.ContextMenuItem:hover
+{
+    margin: 1px 0 1px 0;
+    display: block;
+    color: #003399;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 4px 4px 4px 4px;
+    white-space: nowrap;
+}
+
+/*Modal Popup*/
+.modalBackground {
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+
+.modalPopup {
+	background-color:#ffffdd;
+	border:3px solid #09F;
+	padding:14px;
+	
+}
+
+.modalPopup p {
+    padding: 5px;
+}
+
+a.SearchPagerLinks
+{
+    margin: 1px 0 1px 0;
+    display: block;
+    color: #FF0000;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 4px 4px 4px 4px;
+    white-space: nowrap;
+}
+.printbutton
+{
+    background: #B0B0B0;
+    border: solid 1px grey;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;    
+    height: 25px;  
+
+}
+

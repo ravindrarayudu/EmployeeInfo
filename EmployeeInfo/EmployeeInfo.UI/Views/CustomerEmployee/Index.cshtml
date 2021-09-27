@@ -1,0 +1,32 @@
+﻿@using EmployeeInfo.UI.Controllers;
+@using EmployeeInfo.Contracts.Entities;
+@using EmployeeInfo.Contracts.Entities.Request;
+@using EmployeeInfo.Contracts.Entities.Custom;
+@using Newtonsoft.Json;
+@using System.Linq;
+@using Microsoft.AspNetCore.Http;
+@model EmployeeInfo.Contracts.Entities.EmployeeCustomer
+
+<script src="~/js/customeremployee.js"></script>
+
+<div class="row">
+    <div class="col form-actions no-color">
+        <p>          
+            @Html.DropDownListFor(m => m.CustomerId, new SelectList(ViewBag.Customers, "Id", "CustomerName"), new { id = "ddlcustomer", @class = "form-control", placeholder = "Select Customer" })
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col form-actions no-color" id="customertable">
+        <p>
+            
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col form-actions no-color" id="addresstable">
+        <p>
+
+        </p>
+    </div>
+</div>

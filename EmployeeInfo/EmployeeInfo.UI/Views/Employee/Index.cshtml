@@ -1,0 +1,141 @@
+﻿@model Employee
+@using EmployeeInfo.UI.Controllers;
+@using EmployeeInfo.Contracts.Entities;
+@using EmployeeInfo.Contracts.Entities.Request;
+@using EmployeeInfo.Contracts.Entities.Custom;
+@using Newtonsoft.Json;
+@using System.Linq;
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Employee Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h2>Enter Employee Details</h2>
+    <script src="~/js/employee.js"></script>
+    <div id="dialog" style="display: none"></div>
+    <form method="post" asp-controller="Employee" asp-action="Index">
+        <div id="accordion">
+            <h3>Enter Details</h3>
+            <div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.EmployeeId, new { id = "employeeid", placeholder = "Employee Number #", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.EmployeeName, new { id = "employeename", placeholder = "Employee Name", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.DropDownListFor(m => m.Gender, new SelectList(Enum.GetValues(typeof(Gender))), "Please select",
+                            new { @class = "form-control", placeholder = "Gender" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.DropDownListFor(m => m.MaritalStatus, new SelectList(Enum.GetValues(typeof(MaritalStatus))), "Please select",
+                            new { @class = "form-control", placeholder = "Marital Status" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.DateOfBirth, new { id = "dateofbirth", placeholder = "Date Of Birth", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.DateOfJoining, new { id = "dateofjoining", placeholder = "Date Of Joining", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-actions no-color" style="text-align:center" id="customerview">
+                        @await Component.InvokeAsync("Customers", new { employeeid = Model.Id })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-actions no-color" style="text-align:center">
+                        <a href="#" onclick="addcustomer()" class="btn btn-primary">Add</a>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.BloodGroup, new { id = "bloodgroup", placeholder = "Blood Group", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.EmployeeName, new { id = "employeename", placeholder = "Employee Name", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        Select Designation:
+                        <p>
+                            @Html.DropDownListFor(m => m.DesignationId, new SelectList(ViewBag.Designation, "Id", "DesignationName"), new { id = "designationid", @class = "form-control", placeholder = "Select Designation" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        Select Department:
+                        <p>
+                            @Html.DropDownListFor(m => m.DepartmentId, new SelectList(ViewBag.Department, "Id", "DepartmentName"), new { id = "departmentid", @class = "form-control", placeholder = "Select Department" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.Mobile, new { id = "mobile", placeholder = "Mobile Number", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.Aadhar, new { id = "aadhar", placeholder = "Aadhar Number", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.Uan, new { id = "uan", placeholder = "UAN Number", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.Esi, new { id = "esi", placeholder = "ESI Number", @class = "form-control" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-2">
+                    <div class="col form-actions no-color">
+                        <p>
+                            @Html.TextBoxFor(m => m.BankAccountNumber, new { id = "bankaccountnumber", placeholder = "Bank Account Number", @class = "form-control" })
+                        </p>
+                    </div>
+                    <div class="col form-actions no-color">
+                        Select Location:
+                        <p>
+                            @Html.DropDownListFor(m => m.LocationId, new SelectList(ViewBag.Location, "Id", "LocationName"), new { id = "locationid", @class = "form-control", placeholder = "Select Location" })
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="bankdetailscomponent" class="col-12 form-actions no-color" style="text-align:center">
+                        @await Component.InvokeAsync("BankDetails", Model.BankId)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

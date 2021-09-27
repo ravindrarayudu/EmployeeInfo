@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-EmployeeInfo-FD0AF4B2-70A0-4509-967C-FEDBD26E44CC</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeInfo.Common\EmployeeInfo.Common.csproj" />
+    <ProjectReference Include="..\EmployeeInfo.Contracts\EmployeeInfo.Contracts.csproj" />
+    <ProjectReference Include="..\EmployeeInfo.Data\EmployeeInfo.Data.csproj" />
+  </ItemGroup>
+
+</Project>
